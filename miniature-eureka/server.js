@@ -4,8 +4,8 @@ const PORT = process.env.PORT || 3001;
 
 
 
-const apiRoutes = require('/Develop/routes/apiRoutes');
-const htmlRoutes = require('/Develop/routes/htmlRoutes');
+const apiRoutes = require('./Develop/routes/APIroutes.js');
+const htmlRoutes = require('./Develop/routes/HTMLroutes.js');
 
 
 

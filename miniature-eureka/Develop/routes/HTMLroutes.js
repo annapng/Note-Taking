@@ -1,13 +1,13 @@
 const router = require('express').Router();
+const path = require('path');
 
 
-
-router.get('/notes', (req, res) => {
-    res.sendFile(__dirname + '../public/notes.html');
+router.get('/', (req, res) => {
+    res.sendFile(path.resolve('C:/Users/proba/bootcamp/Note-Taker/miniature-eureka/Develop/public/index.html'));
   });
   
-router.get('/', (req, res) => {
-    res.sendFile(__dirname + '../public/index.html');
+router.get('/notes.html', (req, res) => {
+    res.sendFile(path.resolve('C:/Users/proba/bootcamp/Note-Taker/miniature-eureka/Develop/public/notes.html'));
   });
 
 

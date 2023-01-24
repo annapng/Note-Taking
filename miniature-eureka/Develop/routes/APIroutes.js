@@ -1,22 +1,23 @@
 const router = require('express').Router();
 const {v4: uuidv4} = require('uuid');
-const {notes} = require('../db/db.json');
+const notes = require('../db/db.json');
 const {createNote, findID, editNote, removeNote} = require('../notes.js');
 
 uuidv4();
 
 
-router.get('../notes.js', (req, res) => {
+router.get('/notes', (req, res) => {
 
-    res.json(notes);
+    return res.json(notes);
 
 });
 
-router.post('../notes.js', (req, res) => {
+router.post('/notes', (req, res) => {
     
     if(!req.body.id) {
         req.body.id = uuidv4();
         createNote(req.body, notes);
+      // createNote(req.body);
     } else {
         editNote(req.body, notes);
     }
@@ -26,7 +27,7 @@ router.post('../notes.js', (req, res) => {
 });
 
 
-router.delete('../notes.js/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
 
     const note = findID(req.params.id, notes);
 

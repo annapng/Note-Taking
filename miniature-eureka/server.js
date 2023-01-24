@@ -8,15 +8,13 @@ const apiRoutes = require('./Develop/routes/APIroutes.js');
 const htmlRoutes = require('./Develop/routes/HTMLroutes.js');
 
 
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-app.use(express.static('public'));
+app.use(express.static('./Develop/public'));
 
 
 

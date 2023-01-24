@@ -9,8 +9,9 @@ const createNote = (note, noteArray) => {
     noteArray.push(note);
 
     fs.writeFileSync(
-        path.join(__dirname, notes),
-        JSON.stringify({notes: noteArray}, null, 2)
+      //  path.join(__dirname, notes),
+       "./Develop/db/db.json",
+        JSON.stringify(noteArray, null, 2)
     );
 };
 
@@ -33,7 +34,7 @@ const editNote = (editedNote, noteArray) => {
     
     fs.writeFileSync(
         path.join(__dirname, notes),
-        JSON.stringify({notes: notesArray}, null, 2)
+        JSON.stringify(notesArray, null, 2)
     );
 };
 
@@ -44,8 +45,9 @@ const removeNote = (note, noteArray) => {
     noteArray.splice(index, 1);
 
     fs.writeFileSync(
-        path.join(__dirname, notes),
-        JSON.stringify({notes: noteArray}, null, 2)
+      //  path.join(__dirname, notes),
+      "./Develop/db/db.json",
+        JSON.stringify(noteArray, null, 2)
 
     );
 };

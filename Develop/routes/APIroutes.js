@@ -5,7 +5,6 @@ const {createNote, findID, editNote, removeNote} = require('../notes.js');
 
 uuidv4();
 
-
 router.get('/notes', (req, res) => {
 
     return res.json(notes);
@@ -17,7 +16,6 @@ router.post('/notes', (req, res) => {
     if(!req.body.id) {
         req.body.id = uuidv4();
         createNote(req.body, notes);
-      // createNote(req.body);
     } else {
         editNote(req.body, notes);
     }
